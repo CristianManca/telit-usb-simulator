@@ -1,0 +1,80 @@
+{
+  "device": {
+    "bcdUSB": "0x0200",
+    "bDeviceClass": "0x00",
+    "bDeviceSubClass": "0x00",
+    "bDeviceProtocol": "0x00",
+    "idVendor": "0x1bc7",
+    "idProduct": "0x1044",
+    "bcdDevice": "0x0515",
+    "manufacturer": "Telit Cinterion",
+    "product": "LE920-NSA-V3",
+    "serialnumber": "00000000"
+  },
+  "configuration": {
+    "name": "MBIM",
+    "bmAttributes": "0xe0",
+    "max_power_mA": 500
+  },
+  "iads": [
+    {
+      "first_interface": 0,
+      "interface_count": 2,
+      "class": 2,
+      "subclass": 14,
+      "protocol": 0,
+      "name": "MBIM"
+    }
+  ],
+  "interfaces": [
+    {
+      "name": "MBIM Control",
+      "class": 2,
+      "subclass": 14,
+      "protocol": 0,
+      "behavior": "none",
+      "endpoints": [
+        {
+          "type": "interrupt",
+          "dir": "in",
+          "maxpacket": 64,
+          "interval": 9
+        }
+      ]
+    },
+    {
+      "class": 10,
+      "subclass": 0,
+      "protocol": 2,
+      "alt": 0,
+      "behavior": "none",
+      "endpoints": []
+    },
+    {
+      "name": "MBIM Data",
+      "class": 10,
+      "subclass": 0,
+      "protocol": 2,
+      "alt": 1,
+      "behavior": "none",
+      "endpoints": [
+        {
+          "type": "bulk",
+          "dir": "in"
+        },
+        {
+          "type": "bulk",
+          "dir": "out"
+        }
+      ]
+    }
+  ],
+  "at_responses": {
+    "ATI": "Telit Cinterion\r\nLE920-NSA-V3\r\nRevision: SIMULATED",
+    "AT+CGMI": "Telit Cinterion",
+    "AT+CGMM": "LE920-NSA-V3",
+    "AT+CGMR": "SIMULATED",
+    "AT+CGSN": "000000000000000",
+    "AT#SWPKGV": "SIMULATED"
+  }
+}

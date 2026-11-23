@@ -1,0 +1,103 @@
+{
+  "device": {
+    "bcdUSB": "0x0200",
+    "bDeviceClass": "0x00",
+    "bDeviceSubClass": "0x00",
+    "bDeviceProtocol": "0x00",
+    "idVendor": "0x1bc7",
+    "idProduct": "0x1221",
+    "bcdDevice": "0x0515",
+    "manufacturer": "Telit Cinterion",
+    "product": "LE910Cx-LE",
+    "serialnumber": "00000000"
+  },
+  "configuration": {
+    "name": "DIAGNOSTIC_ADB_NMEA_MUX",
+    "bmAttributes": "0xe0",
+    "max_power_mA": 500
+  },
+  "interfaces": [
+    {
+      "name": "diagnostic",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 48,
+      "behavior": "none",
+      "endpoints": [
+        {
+          "type": "bulk",
+          "dir": "out"
+        },
+        {
+          "type": "bulk",
+          "dir": "in"
+        }
+      ]
+    },
+    {
+      "name": "ADB",
+      "class": 255,
+      "subclass": 66,
+      "protocol": 1,
+      "behavior": "none",
+      "endpoints": [
+        {
+          "type": "bulk",
+          "dir": "out"
+        },
+        {
+          "type": "bulk",
+          "dir": "in"
+        }
+      ]
+    },
+    {
+      "name": "NMEA",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 96,
+      "behavior": "none",
+      "endpoints": [
+        {
+          "type": "interrupt",
+          "dir": "in",
+          "maxpacket": 10,
+          "interval": 9
+        },
+        {
+          "type": "bulk",
+          "dir": "in"
+        },
+        {
+          "type": "bulk",
+          "dir": "out"
+        }
+      ]
+    },
+    {
+      "name": "MUX",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 255,
+      "behavior": "none",
+      "endpoints": [
+        {
+          "type": "bulk",
+          "dir": "out"
+        },
+        {
+          "type": "bulk",
+          "dir": "in"
+        }
+      ]
+    }
+  ],
+  "at_responses": {
+    "ATI": "Telit Cinterion\r\nLE910,\r\nRevision: SIMULATED",
+    "AT+CGMI": "Telit Cinterion",
+    "AT+CGMM": "LE910,",
+    "AT+CGMR": "SIMULATED",
+    "AT+CGSN": "000000000000000",
+    "AT#SWPKGV": "SIMULATED"
+  }
+}

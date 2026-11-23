@@ -1,0 +1,139 @@
+{
+  "device": {
+    "bcdUSB": "0x0200",
+    "bDeviceClass": "0x00",
+    "bDeviceSubClass": "0x00",
+    "bDeviceProtocol": "0x00",
+    "idVendor": "0x37b8",
+    "idProduct": "0xa009",
+    "bcdDevice": "0x0515",
+    "manufacturer": "Amazon",
+    "product": "EERO",
+    "serialnumber": "00000000"
+  },
+  "configuration": {
+    "name": "RNDIS_MODEM_AUXILIARY_DIAG",
+    "bmAttributes": "0xe0",
+    "max_power_mA": 500
+  },
+  "iads": [
+    {
+      "first_interface": 0,
+      "interface_count": 2,
+      "class": 239,
+      "subclass": 4,
+      "protocol": 1,
+      "name": "RNDIS"
+    }
+  ],
+  "interfaces": [
+    {
+      "name": "RNDIS Communications Control",
+      "class": 239,
+      "subclass": 4,
+      "protocol": 1,
+      "behavior": "rndis",
+      "rndis": {
+        "mac": "02:00:00:00:a0:09",
+        "mtu": 1500,
+        "data_interface": 1
+      },
+      "endpoints": [
+        {
+          "type": "interrupt",
+          "dir": "in",
+          "maxpacket": 8,
+          "interval": 9
+        }
+      ]
+    },
+    {
+      "name": "RNDIS Ethernet Data",
+      "class": 10,
+      "subclass": 0,
+      "protocol": 0,
+      "behavior": "none",
+      "endpoints": [
+        {
+          "type": "bulk",
+          "dir": "in"
+        },
+        {
+          "type": "bulk",
+          "dir": "out"
+        }
+      ]
+    },
+    {
+      "name": "modem",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 64,
+      "behavior": "at",
+      "endpoints": [
+        {
+          "type": "interrupt",
+          "dir": "in",
+          "maxpacket": 10,
+          "interval": 9
+        },
+        {
+          "type": "bulk",
+          "dir": "in"
+        },
+        {
+          "type": "bulk",
+          "dir": "out"
+        }
+      ]
+    },
+    {
+      "name": "auxiliary",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 64,
+      "behavior": "none",
+      "endpoints": [
+        {
+          "type": "interrupt",
+          "dir": "in",
+          "maxpacket": 10,
+          "interval": 9
+        },
+        {
+          "type": "bulk",
+          "dir": "in"
+        },
+        {
+          "type": "bulk",
+          "dir": "out"
+        }
+      ]
+    },
+    {
+      "name": "diag",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 48,
+      "behavior": "none",
+      "endpoints": [
+        {
+          "type": "bulk",
+          "dir": "out"
+        },
+        {
+          "type": "bulk",
+          "dir": "in"
+        }
+      ]
+    }
+  ],
+  "at_responses": {
+    "ATI": "Amazon\r\nEERO\r\nRevision: SIMULATED",
+    "AT+CGMI": "Amazon",
+    "AT+CGMM": "EERO",
+    "AT+CGMR": "SIMULATED",
+    "AT+CGSN": "000000000000000",
+    "AT#SWPKGV": "SIMULATED"
+  }
+}

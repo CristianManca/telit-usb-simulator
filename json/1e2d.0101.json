@@ -1,0 +1,116 @@
+{
+  "device": {
+    "bcdUSB": "0x0200",
+    "bDeviceClass": "0x00",
+    "bDeviceSubClass": "0x00",
+    "bDeviceProtocol": "0x00",
+    "idVendor": "0x1e2d",
+    "idProduct": "0x0101",
+    "bcdDevice": "0x0515",
+    "manufacturer": "Cinterion",
+    "product": "PVR81",
+    "serialnumber": "00000000"
+  },
+  "configuration": {
+    "name": "ECM_ACM_ACM_DIAG",
+    "bmAttributes": "0xe0",
+    "max_power_mA": 500
+  },
+  "interfaces": [
+    {
+      "name": "CDC Ethernet Control Model (ECM)",
+      "class": 2,
+      "subclass": 6,
+      "protocol": 0,
+      "behavior": "none",
+      "endpoints": [
+        { "type": "interrupt", "dir": "in", "maxpacket": 16, "interval": 9 }
+      ]
+    },
+    {
+      "class": 10,
+      "subclass": 0,
+      "protocol": 0,
+      "alt": 0,
+      "behavior": "none",
+      "endpoints": []
+    },
+    {
+      "name": "CDC Ethernet Data",
+      "class": 10,
+      "subclass": 0,
+      "protocol": 0,
+      "alt": 1,
+      "behavior": "none",
+      "endpoints": [
+        { "type": "bulk", "dir": "in" },
+        { "type": "bulk", "dir": "out" }
+      ]
+    },
+    {
+      "name": "ACM",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 64,
+      "behavior": "none",
+      "endpoints": [
+        { "type": "interrupt", "dir": "in", "maxpacket": 10, "interval": 9 },
+        { "type": "bulk", "dir": "in" },
+        { "type": "bulk", "dir": "out" }
+      ]
+    },
+    {
+      "name": "ACM Data",
+      "class": 10,
+      "subclass": 0,
+      "protocol": 0,
+      "behavior": "none",
+      "endpoints": [
+        { "type": "bulk", "dir": "in" },
+        { "type": "bulk", "dir": "out" }
+      ]
+    },
+    {
+      "name": "ACM",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 64,
+      "behavior": "none",
+      "endpoints": [
+        { "type": "interrupt", "dir": "in", "maxpacket": 10, "interval": 9 },
+        { "type": "bulk", "dir": "in" },
+        { "type": "bulk", "dir": "out" }
+      ]
+    },
+    {
+      "name": "ACM Data",
+      "class": 10,
+      "subclass": 0,
+      "protocol": 0,
+      "behavior": "none",
+      "endpoints": [
+        { "type": "bulk", "dir": "in" },
+        { "type": "bulk", "dir": "out" }
+      ]
+    },
+    {
+      "name": "diag",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 48,
+      "behavior": "none",
+      "endpoints": [
+        { "type": "bulk", "dir": "out" },
+        { "type": "bulk", "dir": "in" }
+      ]
+    }
+  ],
+  "at_responses": {
+    "ATI": "Cinterion\r\nPVR81\r\nRevision: SIMULATED",
+    "AT+CGMI": "Cinterion",
+    "AT+CGMM": "PVR81",
+    "AT+CGMR": "SIMULATED",
+    "AT+CGSN": "000000000000000",
+    "AT#SWPKGV": "SIMULATED"
+  }
+}

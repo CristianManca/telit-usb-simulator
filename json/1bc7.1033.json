@@ -1,0 +1,94 @@
+{
+  "device": {
+    "bcdUSB": "0x0200",
+    "bDeviceClass": "0x00",
+    "bDeviceSubClass": "0x00",
+    "bDeviceProtocol": "0x00",
+    "idVendor": "0x1bc7",
+    "idProduct": "0x1033",
+    "bcdDevice": "0x0515",
+    "manufacturer": "Telit Cinterion",
+    "product": "LE910Cx-TX",
+    "serialnumber": "00000000"
+  },
+  "configuration": {
+    "name": "DIAGNOSTIC_MODEM_MODEM_ECM",
+    "bmAttributes": "0xe0",
+    "max_power_mA": 500
+  },
+  "interfaces": [
+    {
+      "name": "diagnostic",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 48,
+      "behavior": "none",
+      "endpoints": [
+        { "type": "bulk", "dir": "out" },
+        { "type": "bulk", "dir": "in" }
+      ]
+    },
+    {
+      "name": "modem",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 64,
+      "behavior": "at",
+      "endpoints": [
+        { "type": "interrupt", "dir": "in", "maxpacket": 10, "interval": 9 },
+        { "type": "bulk", "dir": "in" },
+        { "type": "bulk", "dir": "out" }
+      ]
+    },
+    {
+      "name": "modem",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 64,
+      "behavior": "none",
+      "endpoints": [
+        { "type": "interrupt", "dir": "in", "maxpacket": 10, "interval": 9 },
+        { "type": "bulk", "dir": "in" },
+        { "type": "bulk", "dir": "out" }
+      ]
+    },
+    {
+      "name": "CDC Ethernet Control Model (ECM)",
+      "class": 2,
+      "subclass": 6,
+      "protocol": 0,
+      "behavior": "none",
+      "endpoints": [
+        { "type": "interrupt", "dir": "in", "maxpacket": 16, "interval": 9 }
+      ]
+    },
+    {
+      "class": 10,
+      "subclass": 0,
+      "protocol": 0,
+      "alt": 0,
+      "behavior": "none",
+      "endpoints": []
+    },
+    {
+      "name": "CDC Ethernet Data",
+      "class": 10,
+      "subclass": 0,
+      "protocol": 0,
+      "alt": 1,
+      "behavior": "none",
+      "endpoints": [
+        { "type": "bulk", "dir": "in" },
+        { "type": "bulk", "dir": "out" }
+      ]
+    }
+  ],
+  "at_responses": {
+    "ATI": "Telit Cinterion\r\nLE910Cx-TX\r\nRevision: SIMULATED",
+    "AT+CGMI": "Telit Cinterion",
+    "AT+CGMM": "LE910Cx-TX",
+    "AT+CGMR": "SIMULATED",
+    "AT+CGSN": "000000000000000",
+    "AT#SWPKGV": "SIMULATED"
+  }
+}

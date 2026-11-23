@@ -1,0 +1,74 @@
+{
+  "device": {
+    "bcdUSB": "0x0200",
+    "bDeviceClass": "0x00",
+    "bDeviceSubClass": "0x00",
+    "bDeviceProtocol": "0x00",
+    "idVendor": "0x1bc7",
+    "idProduct": "0x101b",
+    "bcdDevice": "0x0515",
+    "manufacturer": "Telit Cinterion",
+    "product": "FE990B40",
+    "serialnumber": "00000000"
+  },
+  "configuration": {
+    "name": "DIAGNOSTIC_NMEA_AUXILIARY_MBIM",
+    "bmAttributes": "0xe0",
+    "max_power_mA": 500
+  },
+  "interfaces": [
+    {
+      "name": "diag",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 48,
+      "behavior": "none",
+      "endpoints": [
+        { "type": "bulk", "dir": "out" },
+        { "type": "bulk", "dir": "in" }
+      ]
+    },
+    {
+      "name": "NMEA",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 96,
+      "behavior": "none",
+      "endpoints": [
+        { "type": "interrupt", "dir": "in", "maxpacket": 10, "interval": 9 },
+        { "type": "bulk", "dir": "in" },
+        { "type": "bulk", "dir": "out" }
+      ]
+    },
+    {
+      "name": "auxiliary",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 64,
+      "behavior": "none",
+      "endpoints": [
+        { "type": "interrupt", "dir": "in", "maxpacket": 10, "interval": 9 },
+        { "type": "bulk", "dir": "in" },
+        { "type": "bulk", "dir": "out" }
+      ]
+    },
+    {
+      "name": "MBIM Control",
+      "class": 2,
+      "subclass": 14,
+      "protocol": 0,
+      "behavior": "none",
+      "endpoints": [
+        { "type": "interrupt", "dir": "in" }
+      ]
+    }
+  ],
+  "at_responses": {
+    "ATI": "Telit Cinterion\r\nFE990B40\r\nRevision: SIMULATED",
+    "AT+CGMI": "Telit Cinterion",
+    "AT+CGMM": "FE990B40",
+    "AT+CGMR": "SIMULATED",
+    "AT+CGSN": "000000000000000",
+    "AT#SWPKGV": "SIMULATED"
+  }
+}

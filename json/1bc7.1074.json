@@ -1,0 +1,196 @@
+{
+  "device": {
+    "bcdUSB": "0x0200",
+    "bDeviceClass": "0x00",
+    "bDeviceSubClass": "0x00",
+    "bDeviceProtocol": "0x00",
+    "idVendor": "0x1bc7",
+    "idProduct": "0x1074",
+    "bcdDevice": "0x0515",
+    "manufacturer": "Telit Cinterion",
+    "product": "FN990Axx",
+    "serialnumber": "00000000"
+  },
+  "configuration": {
+    "name": "MBIM_NMEA_MODEM_MODEM_DIAG_ADPL_ADB",
+    "bmAttributes": "0xe0",
+    "max_power_mA": 500
+  },
+  "iads": [
+    {
+      "first_interface": 0,
+      "interface_count": 2,
+      "class": 2,
+      "subclass": 14,
+      "protocol": 0,
+      "name": "MBIM"
+    }
+  ],
+  "interfaces": [
+    {
+      "name": "MBIM Control",
+      "class": 2,
+      "subclass": 14,
+      "protocol": 0,
+      "behavior": "none",
+      "endpoints": [
+        {
+          "type": "interrupt",
+          "dir": "in",
+          "maxpacket": 64,
+          "interval": 9
+        }
+      ]
+    },
+    {
+      "class": 10,
+      "subclass": 0,
+      "protocol": 2,
+      "alt": 0,
+      "behavior": "none",
+      "endpoints": []
+    },
+    {
+      "name": "MBIM Data",
+      "class": 10,
+      "subclass": 0,
+      "protocol": 2,
+      "alt": 1,
+      "behavior": "none",
+      "endpoints": [
+        {
+          "type": "bulk",
+          "dir": "in"
+        },
+        {
+          "type": "bulk",
+          "dir": "out"
+        }
+      ]
+    },
+    {
+      "name": "NMEA",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 96,
+      "behavior": "none",
+      "endpoints": [
+        {
+          "type": "interrupt",
+          "dir": "in",
+          "maxpacket": 10,
+          "interval": 9
+        },
+        {
+          "type": "bulk",
+          "dir": "in"
+        },
+        {
+          "type": "bulk",
+          "dir": "out"
+        }
+      ]
+    },
+    {
+      "name": "modem",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 64,
+      "behavior": "at",
+      "endpoints": [
+        {
+          "type": "interrupt",
+          "dir": "in",
+          "maxpacket": 10,
+          "interval": 9
+        },
+        {
+          "type": "bulk",
+          "dir": "in"
+        },
+        {
+          "type": "bulk",
+          "dir": "out"
+        }
+      ]
+    },
+    {
+      "name": "modem",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 64,
+      "behavior": "none",
+      "endpoints": [
+        {
+          "type": "interrupt",
+          "dir": "in",
+          "maxpacket": 10,
+          "interval": 9
+        },
+        {
+          "type": "bulk",
+          "dir": "in"
+        },
+        {
+          "type": "bulk",
+          "dir": "out"
+        }
+      ]
+    },
+    {
+      "name": "diag",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 48,
+      "behavior": "none",
+      "endpoints": [
+        {
+          "type": "bulk",
+          "dir": "out"
+        },
+        {
+          "type": "bulk",
+          "dir": "in"
+        }
+      ]
+    },
+    {
+      "name": "ADPL",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 128,
+      "behavior": "none",
+      "endpoints": [
+        {
+          "type": "bulk",
+          "dir": "in"
+        }
+      ]
+    },
+    {
+      "name": "ADB",
+      "class": 255,
+      "subclass": 66,
+      "protocol": 1,
+      "behavior": "none",
+      "endpoints": [
+        {
+          "type": "bulk",
+          "dir": "out"
+        },
+        {
+          "type": "bulk",
+          "dir": "in"
+        }
+      ]
+    }
+  ],
+  "at_responses": {
+    "ATI": "Telit Cinterion\r\nFN990Axx\r\nRevision: SIMULATED",
+    "AT+CGMI": "Telit Cinterion",
+    "AT+CGMM": "FN990Axx",
+    "AT+CGMR": "SIMULATED",
+    "AT+CGSN": "000000000000000",
+    "AT#SWPKGV": "SIMULATED"
+  }
+}

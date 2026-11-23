@@ -1,0 +1,63 @@
+{
+  "device": {
+    "bcdUSB": "0x0200",
+    "bDeviceClass": "0x00",
+    "bDeviceSubClass": "0x00",
+    "bDeviceProtocol": "0x00",
+    "idVendor": "0x1bc7",
+    "idProduct": "0x8905",
+    "bcdDevice": "0x0515",
+    "manufacturer": "Telit Cinterion",
+    "product": "FN990 SBL",
+    "serialnumber": "00000000"
+  },
+  "configuration": {
+    "name": "DIAGNOSTIC_SAHARA",
+    "bmAttributes": "0xe0",
+    "max_power_mA": 500
+  },
+  "interfaces": [
+    {
+      "name": "diagnostic",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 48,
+      "behavior": "none",
+      "endpoints": [
+        {
+          "type": "bulk",
+          "dir": "out"
+        },
+        {
+          "type": "bulk",
+          "dir": "in"
+        }
+      ]
+    },
+    {
+      "name": "sahara",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 48,
+      "behavior": "none",
+      "endpoints": [
+        {
+          "type": "bulk",
+          "dir": "out"
+        },
+        {
+          "type": "bulk",
+          "dir": "in"
+        }
+      ]
+    }
+  ],
+  "at_responses": {
+    "ATI": "Telit Cinterion\r\nFN990 SBL\r\nRevision: SIMULATED",
+    "AT+CGMI": "Telit Cinterion",
+    "AT+CGMM": "FN990 SBL",
+    "AT+CGMR": "SIMULATED",
+    "AT+CGSN": "000000000000000",
+    "AT#SWPKGV": "SIMULATED"
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "device": {
+    "bcdUSB": "0x0200",
+    "bDeviceClass": "0x00",
+    "bDeviceSubClass": "0x00",
+    "bDeviceProtocol": "0x00",
+    "idVendor": "0x1bc7",
+    "idProduct": "0x1040",
+    "bcdDevice": "0x0515",
+    "manufacturer": "Telit Cinterion",
+    "product": "LE920-NSA-V3",
+    "serialnumber": "00000000"
+  },
+  "configuration": {
+    "name": "DIAGNOSTIC_ADB_RMNET_WWAN_NMEA_MODEM_MODEM_AUXILIARY",
+    "bmAttributes": "0xe0",
+    "max_power_mA": 500
+  },
+  "interfaces": [
+    {
+      "name": "diagnostic",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 48,
+      "behavior": "none",
+      "endpoints": [
+        {
+          "type": "bulk",
+          "dir": "out"
+        },
+        {
+          "type": "bulk",
+          "dir": "in"
+        }
+      ]
+    },
+    {
+      "name": "ADB",
+      "class": 255,
+      "subclass": 66,
+      "protocol": 1,
+      "behavior": "none",
+      "endpoints": [
+        {
+          "type": "bulk",
+          "dir": "out"
+        },
+        {
+          "type": "bulk",
+          "dir": "in"
+        }
+      ]
+    },
+    {
+      "name": "RMNET wwan",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 80,
+      "behavior": "none",
+      "endpoints": [
+        {
+          "type": "interrupt",
+          "dir": "in",
+          "maxpacket": 8,
+          "interval": 9
+        },
+        {
+          "type": "bulk",
+          "dir": "in"
+        },
+        {
+          "type": "bulk",
+          "dir": "out"
+        }
+      ]
+    },
+    {
+      "name": "NMEA",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 96,
+      "behavior": "none",
+      "endpoints": [
+        {
+          "type": "interrupt",
+          "dir": "in",
+          "maxpacket": 10,
+          "interval": 9
+        },
+        {
+          "type": "bulk",
+          "dir": "in"
+        },
+        {
+          "type": "bulk",
+          "dir": "out"
+        }
+      ]
+    },
+    {
+      "name": "modem",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 64,
+      "behavior": "at",
+      "endpoints": [
+        {
+          "type": "interrupt",
+          "dir": "in",
+          "maxpacket": 10,
+          "interval": 9
+        },
+        {
+          "type": "bulk",
+          "dir": "in"
+        },
+        {
+          "type": "bulk",
+          "dir": "out"
+        }
+      ]
+    },
+    {
+      "name": "modem",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 64,
+      "behavior": "none",
+      "endpoints": [
+        {
+          "type": "interrupt",
+          "dir": "in",
+          "maxpacket": 10,
+          "interval": 9
+        },
+        {
+          "type": "bulk",
+          "dir": "in"
+        },
+        {
+          "type": "bulk",
+          "dir": "out"
+        }
+      ]
+    },
+    {
+      "name": "auxiliary",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 64,
+      "behavior": "none",
+      "endpoints": [
+        {
+          "type": "interrupt",
+          "dir": "in",
+          "maxpacket": 10,
+          "interval": 9
+        },
+        {
+          "type": "bulk",
+          "dir": "in"
+        },
+        {
+          "type": "bulk",
+          "dir": "out"
+        }
+      ]
+    }
+  ],
+  "at_responses": {
+    "ATI": "Telit Cinterion\r\nLE920-NSA-V3\r\nRevision: SIMULATED",
+    "AT+CGMI": "Telit Cinterion",
+    "AT+CGMM": "LE920-NSA-V3",
+    "AT+CGMR": "SIMULATED",
+    "AT+CGSN": "000000000000000",
+    "AT#SWPKGV": "SIMULATED"
+  }
+}

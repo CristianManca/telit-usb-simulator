@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+
+# Local-only vendor drivers and archives (not part of the project)
+other/
+*.zip
+
+# Kernel module build outputs (sources are kept)
+vudc_fix/*.o
+vudc_fix/*.ko
+vudc_fix/*.mod
+vudc_fix/*.mod.c
+vudc_fix/*.cmd
+vudc_fix/modules.order
+vudc_fix/Module.symvers
