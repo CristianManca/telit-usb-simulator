@@ -365,9 +365,13 @@ Bulk IN only, as on the real module (`protocol` 128).
 On Linux, `qmi_wwan` binds to this interface and creates `wwan*` and `/dev/cdc-wdm*`. There is
 no QMI responder in the simulator, so no QMI request is answered (section 8).
 
+Layout used by the profiles: class/subclass/protocol `255/255/80`, three endpoints. The first
+(interrupt IN, 8 bytes) is the QMI notification endpoint; the two bulk endpoints carry the QMI
+requests and responses. The name is `RMNET wwan`.
+
 ```json
 {
-  "name": "RmNet",
+  "name": "RMNET wwan",
   "class": 255,
   "subclass": 255,
   "protocol": 80,

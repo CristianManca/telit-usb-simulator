@@ -17,7 +17,7 @@
   },
   "interfaces": [
     {
-      "name": "RmNet",
+      "name": "RMNET wwan",
       "class": 255,
       "subclass": 255,
       "protocol": 80,
