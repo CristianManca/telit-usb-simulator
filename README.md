@@ -64,7 +64,7 @@ python3 ffs_daemon.py --dump json/1bc7.10a9.json /tmp/out
 .
 ├── telit_vudc.sh          # start/stop script (run with sudo)
 ├── ffs_daemon.py          # FunctionFS daemon: descriptors, behaviors, AT responder
-├── json/                  # simulation profiles (one per VID/PID)
+├── json/                  # simulation profiles (one per VID/PID, plus -dump variants)
 ├── vudc_fix/              # patched usbip-vudc module (CVE fix, see section 9)
 └── README.md
 ```
@@ -146,6 +146,18 @@ alternate setting of the previous interface.
 | `extra_descriptors` | no | | Hex strings for class-specific descriptors. FunctionFS rejects CDC descriptors (section 8). |
 
 Interface numbers are assigned automatically in order (first `alt` 0 entry = 0, next = 1, …).
+
+**Placeholder interfaces.** The kernel renumbers the interfaces from 0, so a profile cannot force
+an interface to a given number. To reproduce a real `MI_xx` (for example a DIAG on MI_02), insert
+empty placeholder interfaces before it:
+
+```json
+{ "name": "placeholder", "class": 254, "subclass": 1, "protocol": 1, "endpoints": [] }
+```
+
+Use class 254 (`0xFE`), not 255: the `option` driver binds vendor-specific (255) interfaces even
+when they are empty, and each bind reserves a `ttyUSB` number, which leaves gaps in the numbering.
+For example, `json/1bc7.1203-dump.json` has two placeholders before `QHSUSB__BULK`.
 
 ### 4.5 `endpoints`
 
@@ -691,6 +703,8 @@ After copying it, run `sudo depmod -a`. Check it with `modinfo -F filename usbip
 | `two fullspeed descriptors for EP N` / `failed to start ... -22` | Duplicate endpoint address in the profile. Run the `build_layout` check from section 7. |
 | More than 15 endpoints in one direction | The daemon refuses the profile. Reduce the endpoints of that direction. |
 | `Broken pipe` when opening `/dev/ttyUSB*` | A control request was stalled. Check the daemon, then restart. |
+| Gaps in `ttyUSB` numbering, or an interface does not have the expected MI | Vendor-specific placeholder interfaces bound by `option`, or missing placeholders. See section 4.4. |
+| `OSError: [Errno 22] Invalid argument` writing strings | Only with an old daemon: the strings table must be `0/0` when a profile has no strings. Current `ffs_daemon.py` does this. |
 | No `/dev/ttyUSB*` | Run `lsusb -t` to see which driver bound each interface. |
 | Serial port silent | `grep -v "event SETUP" /run/telit_vudc/ffs.log` and check the `at` behavior. |
 
