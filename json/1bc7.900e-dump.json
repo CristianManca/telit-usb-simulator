@@ -1,0 +1,31 @@
+{
+  "device": {
+    "bcdUSB": "0x0210",
+    "bDeviceClass": "0x00",
+    "bDeviceSubClass": "0x00",
+    "bDeviceProtocol": "0x00",
+    "idVendor": "0x1bc7",
+    "idProduct": "0x900e",
+    "bcdDevice": "0x0000",
+    "manufacturer": "Telit Cinterion",
+    "product": "TDLoader",
+    "serialnumber": "00000000"
+  },
+  "configuration": {
+    "name": "",
+    "bmAttributes": "0xa0",
+    "max_power_mA": 2
+  },
+  "interfaces": [
+    {
+      "class": 255,
+      "subclass": 255,
+      "protocol": 16,
+      "behavior": "none",
+      "endpoints": [
+        { "type": "bulk", "dir": "in" },
+        { "type": "bulk", "dir": "out" }
+      ]
+    }
+  ]
+}

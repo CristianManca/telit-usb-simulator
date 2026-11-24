@@ -1,0 +1,31 @@
+{
+  "device": {
+    "bcdUSB": "0x0200",
+    "bDeviceClass": "0x00",
+    "bDeviceSubClass": "0x00",
+    "bDeviceProtocol": "0x00",
+    "idVendor": "0x1bc7",
+    "idProduct": "0x1208",
+    "bcdDevice": "0x0000",
+    "manufacturer": "Qualcomm CDMA Technologies MSM",
+    "product": "QHSUSB__BULK",
+    "serialnumber": "00000000"
+  },
+  "configuration": {
+    "name": "",
+    "bmAttributes": "0x80",
+    "max_power_mA": 2
+  },
+  "interfaces": [
+    {
+      "class": 255,
+      "subclass": 255,
+      "protocol": 255,
+      "behavior": "none",
+      "endpoints": [
+        { "type": "bulk", "dir": "in" },
+        { "type": "bulk", "dir": "out" }
+      ]
+    }
+  ]
+}
