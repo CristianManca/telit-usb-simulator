@@ -1,0 +1,40 @@
+{
+  "device": {
+    "bcdUSB": "0x0200",
+    "bDeviceClass": "0x00",
+    "bDeviceSubClass": "0x00",
+    "bDeviceProtocol": "0x00",
+    "idVendor": "0x1bc7",
+    "idProduct": "0x1101",
+    "bcdDevice": "0x0515",
+    "manufacturer": "Telit Cinterion",
+    "product": "ME910C1",
+    "serialnumber": "00000000"
+  },
+  "configuration": {
+    "name": "DIAGNOSTIC",
+    "bmAttributes": "0xe0",
+    "max_power_mA": 500
+  },
+  "interfaces": [
+    {
+      "name": "diag",
+      "class": 255,
+      "subclass": 255,
+      "protocol": 48,
+      "behavior": "none",
+      "endpoints": [
+        { "type": "bulk", "dir": "out" },
+        { "type": "bulk", "dir": "in" }
+      ]
+    }
+  ],
+  "at_responses": {
+    "ATI": "Telit Cinterion\r\nME910C1\r\nRevision: SIMULATED",
+    "AT+CGMI": "Telit Cinterion",
+    "AT+CGMM": "ME910C1",
+    "AT+CGMR": "SIMULATED",
+    "AT+CGSN": "000000000000000",
+    "AT#SWPKGV": "SIMULATED"
+  }
+}

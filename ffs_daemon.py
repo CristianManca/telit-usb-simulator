@@ -155,6 +155,9 @@ def build_descriptors(ifaces, iads):
 
 
 def build_strings(strings):
+    if not strings:
+        # the kernel requires str_count and lang_count to be zero together
+        return struct.pack("<IIII", FUNCTIONFS_STRINGS_MAGIC, 16, 0, 0)
     body = struct.pack("<H", 0x0409) + b"".join(s.encode() + b"\0" for s in strings)
     length = 16 + len(body)
     return struct.pack("<IIII", FUNCTIONFS_STRINGS_MAGIC, length, len(strings), 1) + body

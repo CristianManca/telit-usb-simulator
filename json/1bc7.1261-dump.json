@@ -7,8 +7,8 @@
     "idVendor": "0x1bc7",
     "idProduct": "0x1261",
     "bcdDevice": "0x0000",
-    "manufacturer": "Qualcomm CDMA Technologies MSM",
-    "product": "QHSUSB__BULK",
+    "manufacturer": "Telit Cinterion",
+    "product": "LE910Cx-LE",
     "serialnumber": "00000000"
   },
   "configuration": {
@@ -18,6 +18,7 @@
   },
   "interfaces": [
     {
+      "name": "QHSUSB__BULK",
       "class": 255,
       "subclass": 255,
       "protocol": 255,
