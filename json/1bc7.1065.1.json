@@ -12,7 +12,7 @@
     "serialnumber": "00000000"
   },
   "configuration": {
-    "name": "DIAGNOSTIC_ADB_RMNET_WWAN_NMEA_MODEM_MODEM_AUXILIARY_QDBUSB",
+    "name": "DIAGNOSTIC_ADB_RMNET_NMEA_DUN_DUN_AUXILIARY_QDBUSB",
     "bmAttributes": "0xe0",
     "max_power_mA": 500
   },

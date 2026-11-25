@@ -12,7 +12,7 @@
     "serialnumber": "00000000"
   },
   "configuration": {
-    "name": "DIAGNOSTIC_QDBUSB_MODEM_RMNET_WWAN",
+    "name": "DIAGNOSTIC_QDBUSB_DUN_RMNET",
     "bmAttributes": "0xe0",
     "max_power_mA": 500
   },

@@ -12,7 +12,7 @@
     "serialnumber": "00000000"
   },
   "configuration": {
-    "name": "RMNET_WWAN_ACM_ACM_DIAG",
+    "name": "RMNET_ACM_ACM_DIAG",
     "bmAttributes": "0xe0",
     "max_power_mA": 500
   },

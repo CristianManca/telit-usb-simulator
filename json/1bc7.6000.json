@@ -12,7 +12,7 @@
     "serialnumber": "00000000"
   },
   "configuration": {
-    "name": "RMNET_WWAN_MODEM_NMEA_DIAG_ADPL_QDSS_ADB",
+    "name": "RMNET_DUN_NMEA_DIAG_DPL_QDSS_ADB",
     "bmAttributes": "0xe0",
     "max_power_mA": 500
   },

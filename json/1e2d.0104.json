@@ -12,7 +12,7 @@
     "serialnumber": "00000000"
   },
   "configuration": {
-    "name": "RMNET_WWAN_ACM_ADB_DIAGNOSTIC",
+    "name": "RMNET_ACM_ADB_DIAGNOSTIC",
     "bmAttributes": "0xe0",
     "max_power_mA": 500
   },

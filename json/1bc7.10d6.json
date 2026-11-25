@@ -12,7 +12,7 @@
     "serialnumber": "00000000"
   },
   "configuration": {
-    "name": "RMNET_WWAN_AUDIO_UAC2_NMEA_MODEM_MODEM_AUXILIARY_DIAG_ADB",
+    "name": "RMNET_AUDIO_UAC2_NMEA_DUN_DUN_AUXILIARY_DIAG_ADB",
     "bmAttributes": "0xe0",
     "max_power_mA": 500
   },
